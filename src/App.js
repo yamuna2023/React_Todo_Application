@@ -79,7 +79,9 @@ function App() {
     }
   };
   return (
-    <div className="container" >
+    <div className="container"style={{
+      backgroundImage: "url('https://www.aihr.com/wp-content/uploads/employee-task-list-template-cover.jpg')"
+    }} >
       <h1 className='mainheading' style={{ fontSize: 30 }}>To-Do List</h1>
 
       <div className="container2" style={{ height: '100%' }}>
