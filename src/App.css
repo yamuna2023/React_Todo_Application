@@ -1,0 +1,156 @@
+.App {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* input[type="text"], */
+textarea {
+  /* margin: 5px 0; */
+  padding: 5px;
+  /* width: 100%; */
+  border: 1px solid #ddd;
+
+}
+.editInputinput{
+  margin: 5px 0;
+  padding: 5px;
+  width: 90%;
+  border: 1px solid #ddd;
+
+}
+.edittextarea {
+  /* margin: 5px 0; */
+  padding: 5px;
+  width: 90%;
+  border: 1px solid #ddd;
+
+}
+button {
+  padding: 5px 10px;
+  margin: 5px 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px ;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+span {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+textarea {
+  height: 60px;
+}
+.expand-icon {
+  margin-left: 10px;
+  font-size: 1em;
+  transition: transform 0.3s ease;
+}
+.mainheading{
+  font-size: small;
+  font-weight: normal;
+  color: black;
+  margin-bottom: 10px;
+  padding: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  
+}
+.commontextinpustyle {
+  background-color: white;
+  color: #fff;
+  border: 0.5px;
+  outline: navy;
+  height: 20px;
+  color: #0f172a;
+  border-radius: 2px;
+  flex: 1;
+  padding: 7px;
+  border: 0.5px solid rgb(194, 198, 202);
+  margin-bottom: 10px;
+
+}
+
+
+.editinpustyle {
+  background-color: white;
+  color: #fff;
+  border: 0.5px;
+  outline: navy;
+  height: 20px;
+  color: #0f172a;
+  border-radius: 2px;
+  width: 97%;
+  height: 20px;
+  flex: 1;
+  padding: 7px;
+  border: 0.5px solid rgb(194, 198, 202);
+  margin-bottom: 10px;
+
+}
+
+.ButtomStyle {
+  /* background-color: "#0062ff"; */
+  background-color: rgb(101, 101, 246);
+  color:aliceblue;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-width: 0;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.container {
+  background-color: whitesmoke;
+  background-position: 'center';
+  background-size: 'cover';
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+
+}
+
+.container2 {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 20%;
+  border-radius: 7px;
+  border: 0.5px solid rgb(194, 198, 202);
+  height: auto;
+  padding: 30px;
+  width: 60%;
+  box-shadow: 1px 1px 10px 1px rgb(93, 90, 239);
+}
+
+.editcontainer {
+  background-color: rgb(215, 226, 237);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  border: 0.5px solid rgb(194, 198, 202);
+  height: auto;
+  padding: 10px;
+  margin-top: 5px;
+
+}
