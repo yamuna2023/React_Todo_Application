@@ -31,10 +31,16 @@ function App() {
       .then(data => setTasks(data));
   }, []);
 
-
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   const handleCreateTask = () => {
-    
+    // Validate the input fields
+    if (newTaskTitle.trim() === '' || newTaskDescription.trim() === '') {
+      alert('Both title and description are required.');
+      return;
+    }
 
     const newTask = {
       id: tasks.length + 1,
@@ -82,6 +88,7 @@ function App() {
           type="text"
           placeholder="Search tasks..."
           value={search}
+          onChange={handleSearchChange}
         />
         <h2 className='mainheading'>Create Task</h2>
         <input
