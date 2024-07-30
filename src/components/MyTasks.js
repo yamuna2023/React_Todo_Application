@@ -30,7 +30,7 @@ const Task = ({ task, onToggleComplete, onUpdateTask, onDeleteTask }) => {
                         onChange={() => onToggleComplete(task.id)}
                     />
                     <div onClick={handleExpandToggle} style={{cursor:'pointer' ,flex: 1, display: 'flex', justifyContent: 'space-between' }}>
-                        <span >
+                        <span style={{ textDecorationLine: task.completed && 'line-through'}}>
                             {task.title}
                         </span>
                         <span >
