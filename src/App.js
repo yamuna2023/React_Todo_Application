@@ -18,18 +18,29 @@ const sampledata = [
     "timestamp": "2024-07-28T14:00:00Z"
   }
 ]
-
+// Key to use in localStorage
+const Task_STORAGE_KEY = 'tasks'; 
 function App() {
   const [tasks, setTasks] = useState(sampledata);
   const [search, setSearch] = useState('');
   const [newTaskTitle, setNewTaskTitle] = useState('');
   const [newTaskDescription, setNewTaskDescription] = useState('');
 
+  //Get Localstorage data code
   useEffect(() => {
-    fetch('../tasks.json')
-      .then(response => response.json())
-      .then(data => setTasks(data));
+    const storedTasks = localStorage.getItem(Task_STORAGE_KEY);
+    if (storedTasks) {
+      console.log('stored tasks :', storedTasks);
+      setTasks(JSON.parse(storedTasks));
+    }
+    console.log('Stored tasks:', localStorage.getItem(Task_STORAGE_KEY));
   }, []);
+
+  const handleToggleComplete = (id) => {
+    setTasks(tasks.map(task =>
+      task.id === id ? { ...task, completed: !task.completed } : task
+    ));
+  };
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
@@ -53,13 +64,10 @@ function App() {
     setTasks([...tasks, newTask]);
     setNewTaskTitle('');
     setNewTaskDescription('');
+    localStorage.setItem(Task_STORAGE_KEY, JSON.stringify([...tasks, newTask]))
+    console.log('helooooooooo')
   };
 
-  const handleToggleComplete = (id) => {
-    setTasks(tasks.map(task =>
-      task.id === id ? { ...task, completed: !task.completed } : task
-    ));
-  };
 
   const handleUpdateTask = (id, newTitle, newDescription) => {
     setTasks(tasks.map(task =>
@@ -76,10 +84,12 @@ function App() {
   const handleDeleteTask = (id) => {
     if (window.confirm('Are you sure you want to delete this task?')) {
       setTasks(tasks.filter(task => task.id !== id));
+      let filtertasks = tasks.filter(task => task.id !== id);
+      localStorage.setItem(Task_STORAGE_KEY, JSON.stringify(filtertasks))
     }
   };
   return (
-    <div className="container"style={{
+    <div className="container" style={{
       backgroundImage: "url('https://www.aihr.com/wp-content/uploads/employee-task-list-template-cover.jpg')"
     }} >
       <h1 className='mainheading' style={{ fontSize: 30 }}>To-Do List</h1>
@@ -111,7 +121,7 @@ function App() {
         />
 
 
-        <div style={{ width: '100%',marginTop:10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: '100%', marginTop: 10, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
 
           <button style={{ width: '30%' }} className='ButtomStyle' onClick={handleCreateTask}>Add Task</button>
         </div>
